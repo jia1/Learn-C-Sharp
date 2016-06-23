@@ -95,8 +95,32 @@ namespace LearnCSharp
             }
         }
 
+        public class Animal
+        {
+            // virtual keyword is required for overriding in the child classes
+            public virtual void Greet()
+            {
+                Console.WriteLine("I'm an animal!");
+            }
+        }
+
+        // fields, properties, methods are inherited
+        // multiple inheritance is not supported in C#
+        public class Dog : Animal
+        {
+            public override void Greet()
+            {
+                // equivalent of super in Java
+                base.Greet();
+                Console.WriteLine("A dog, to be exact!");
+            }
+        }
+
         static void Main(string[] args)
         {
+            Dog dog = new Dog();
+            dog.Greet();
+            
             // var car may be used
             Car car = new Car("Blue", 1000000);
             Console.WriteLine(car.Describe());
