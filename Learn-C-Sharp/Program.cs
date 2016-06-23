@@ -1,5 +1,6 @@
 ﻿// using is a keyword which imports a namespace (a collection of classes)
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,13 @@ namespace LearnCSharp
             {
                 Console.Write(letter);
             }
+            // newline + newline
+            Console.WriteLine('\n');
+            ArrayList aList = new ArrayList();
+            aList.Add("D");
+            aList.Add(4);
+            foreach (var item in aList)
+                Console.Write(item);
             // newline + newline
             Console.WriteLine('\n');
             Console.WriteLine("Hello, World!");
