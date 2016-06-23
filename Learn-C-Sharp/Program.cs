@@ -86,6 +86,15 @@ namespace LearnCSharp
             }
         }
 
+        // usually for utility or helper classes
+        public static class Rectangle
+        {
+            public static int CalculateArea(int width, int height)
+            {
+                return width * height;
+            }
+        }
+
         static void Main(string[] args)
         {
             // var car may be used
