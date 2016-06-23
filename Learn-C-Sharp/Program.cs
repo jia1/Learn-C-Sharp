@@ -12,6 +12,14 @@ namespace LearnCSharp
     {
         // bool, int, string, char, float
         // <visibility> <data type> <name> = <value>;
+        // <visibility> <return type> <name>(<parameters>) { <function code> }
+        public static int DoStuff(int n)
+        {
+            int value = (int)Math.Pow(n, 2);
+            Console.WriteLine("DoStuff() is called and the return value will be " + value);
+            return value;
+        }
+
         static void Main(string[] args)
         {
             int number;
@@ -49,6 +57,8 @@ namespace LearnCSharp
                 Console.Write(item);
             // newline + newline
             Console.WriteLine('\n');
+            // there is a return value but no variable is bound to it
+            DoStuff(number);
             Console.WriteLine("Hello, World!");
             // call ReadLine() so that the console will not close immediately after printing
             Console.ReadLine();
