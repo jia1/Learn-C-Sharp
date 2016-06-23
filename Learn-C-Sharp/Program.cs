@@ -15,7 +15,11 @@ namespace LearnCSharp
         {
             int number;
             Console.WriteLine("Please enter a number: ");
-            number = int.Parse(Console.ReadLine());
+            // improved parsing
+            string input = Console.ReadLine();
+            // { ... } is for blocks of >= 2 lines
+            if (!int.TryParse(input, out number))
+                number = -1;
             Console.WriteLine("You have entered " + number);
             switch(number)
             {
@@ -27,6 +31,16 @@ namespace LearnCSharp
                     Console.WriteLine("Which is some other number that is neither 0 nor 1");
                     break;
             }
+            // while ( ... ) { ... }
+            // do { ... } while ( ... );
+            // for ( ... ; ... ; ... ) { ... }
+            string[] alphabet = { "A", "B", "C" };
+            foreach (string letter in alphabet)
+            {
+                Console.Write(letter);
+            }
+            // newline + newline
+            Console.WriteLine('\n');
             Console.WriteLine("Hello, World!");
             // call ReadLine() so that the console will not close immediately after printing
             Console.ReadLine();
