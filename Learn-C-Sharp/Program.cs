@@ -21,6 +21,12 @@ namespace LearnCSharp
             return value;
         }
 
+        // static void PrintPeople(string[] names) { ... }
+        // PrintPeople(new string[] { "A", "B", "C" });
+        // static void PrintPeople(params string[] names) { ... }
+        // PrintPeople("A", "B", "C");
+        // params can only be used once per function, and must be the last parameter
+
         static void Main(string[] args)
         {
             int number;
@@ -44,7 +50,17 @@ namespace LearnCSharp
             // while ( ... ) { ... }
             // do { ... } while ( ... );
             // for ( ... ; ... ; ... ) { ... }
+            // declare array: string[] anArray;
+            // instantiate array: 
+            //      anArray = new string[3]; // size - anArray.Length returns 3
+            //      OR anArray = { "A", "B", "C" };
+            //      OR anArray = new string[3] { "A", "B", "C" }; 
+            //      // initializer must be length 3
             string[] alphabet = { "A", "B", "C" };
+            // Array.Sort(alphabet) should cause no change to the already-sorted alphabet
+            Array.Reverse(alphabet);
+            // multidimensional: rectangular (m by n by ...) or 
+            //      jagged (row 1 = 1 column, row 2 = 4 columns, ... irregular)
             foreach (string letter in alphabet)
             {
                 Console.Write(letter);
