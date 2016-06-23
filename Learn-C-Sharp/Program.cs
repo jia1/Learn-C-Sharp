@@ -30,23 +30,42 @@ namespace LearnCSharp
         class Car
         {
             private string colour;
+            private string onlyColour = "AZURE";
             private int value;
             public Car(string colour, int price)
             {
-                this.colour = colour;
+                // this.colour = colour;
+                Colour = colour;
                 value = price;
+            }
+
+            // property - controls the accessibility of class variables
+            public string Colour
+            {
+                get { return colour.ToUpper(); }
+                set
+                {
+                    value = value.ToUpper();
+                    if (value == onlyColour)
+                        colour = value;
+                    else
+                    {
+                        Console.WriteLine(value + " is not available.");
+                        colour = onlyColour;
+                    }
+                }
             }
 
             public string Describe()
             {
-                return "The car is " + colour + " in colour and is worth $" + value;
+                return "The car is " + Colour + " in colour and is worth $" + value;
             }
         }
 
         static void Main(string[] args)
         {
             // var car may be used
-            Car car = new Car("Azure", 1000000);
+            Car car = new Car("Blue", 1000000);
             Console.WriteLine(car.Describe());
             Console.ReadLine();
 
