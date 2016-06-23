@@ -27,6 +27,16 @@ namespace LearnCSharp
         // PrintPeople("A", "B", "C");
         // params can only be used once per function, and must be the last parameter
 
+        // Plus(int a, int b) { return Plus(a, b, 0); }
+        // Plus(int a, int b, int c) { return Plus(a, b, c, 0); }
+        // Plus(int a, int b, int c, int d) { return Plus(a, b, c, d); }
+
+        // public - default for enums and interfaces, 
+        // protected - can be reached from within the same class or from a class which inherits, 
+        // internal - can be reached from within the same project only, 
+        // protected internal - the same as internal + classes which inherit even if different project, 
+        // private - members from the same class only, default for classes and structs
+
         class Car
         {
             private string colour;
