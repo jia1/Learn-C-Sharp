@@ -27,8 +27,30 @@ namespace LearnCSharp
         // PrintPeople("A", "B", "C");
         // params can only be used once per function, and must be the last parameter
 
+        class Car
+        {
+            private string colour;
+            private int value;
+            public Car(string colour, int price)
+            {
+                this.colour = colour;
+                value = price;
+            }
+
+            public string Describe()
+            {
+                return "The car is " + colour + " in colour and is worth $" + value;
+            }
+        }
+
         static void Main(string[] args)
         {
+            // var car may be used
+            Car car = new Car("Azure", 1000000);
+            Console.WriteLine(car.Describe());
+            Console.ReadLine();
+
+            /*
             int number;
             Console.WriteLine("Please enter a number: ");
             // improved parsing
@@ -81,6 +103,7 @@ namespace LearnCSharp
             Console.WriteLine("Hello, World!");
             // call ReadLine() so that the console will not close immediately after printing
             Console.ReadLine();
+            */
         }
     }
 }
