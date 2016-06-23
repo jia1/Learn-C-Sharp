@@ -32,11 +32,25 @@ namespace LearnCSharp
             private string colour;
             private string onlyColour = "AZURE";
             private int value;
-            public Car(string colour, int price)
+            public Car()
+            {
+                Console.WriteLine("The Car Constructor with no parameters is called");
+            }
+
+            // the constructor with no parameters is called first to instantiate 
+            // various objects for the class in the default constructor
+            public Car(string colour, int price) : this()
             {
                 // this.colour = colour;
                 Colour = colour;
                 value = price;
+            }
+
+            // Destructor
+            ~Car()
+            {
+                Console.WriteLine("The Car Destructor is called");
+                Console.ReadLine();
             }
 
             // property - controls the accessibility of class variables
